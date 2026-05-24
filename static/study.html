@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J's Journal | Study Progress</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">J's Journal</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="study.html" class="active">Study Progress</a>
+          <a href="admin.html">Admin</a>
+        </nav>
+      </header>
+
+      <section class="section-block" id="study-section">
+        <div class="section-title">
+          <span>Learning</span>
+          <h2>Subject progress & key notes</h2>
+        </div>
+        <div class="grid-list" id="study-grid"></div>
+      </section>
+
+      <!-- Subject modal (filled dynamically) -->
+      <div id="subject-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+          <button id="modal-close" class="button secondary" style="float:right;">Close</button>
+          <h2 id="modal-title">Subject</h2>
+          <div id="modal-body"></div>
+        </div>
+      </div>
+
+      <footer class="footer-bar">
+        <p>Maintain your learning rhythm with steady, inspiring visuals.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

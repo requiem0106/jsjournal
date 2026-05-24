@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": "welcome",
+      "title": "Welcome to My Journal",
+      "category": "Daily Life",
+      "body": "This space is where I capture thoughtful reflections, quiet daily moments, and the progress of ambitious study goals. Each entry can include images and meaningful files, so the story of my day grows richer over time.",
+      "images": [],
+      "attachments": [],
+      "created_at": "2026-05-24"
+    }
+  ],
+  "study": [
+    {
+      "id": "english",
+      "subject": "English",
+      "progress": 82,
+      "notes": "Vocabulary, reading, and creative writing practice are improving steadily. Next goal: finish the contemporary novel and summarize key themes.",
+      "resources": [
+        {
+          "label": "Vocabulary file",
+          "url": "/uploads/files/english-vocab.pdf"
+        }
+      ]
+    },
+    {
+      "id": "biology",
+      "subject": "Biology",
+      "progress": 65,
+      "notes": "Memorizing cellular structures and mapping ecosystems. I plan to create a mind map for genetics this week.",
+      "resources": []
+    },
+    {
+      "id": "chemistry",
+      "subject": "Chemistry",
+      "progress": 72,
+      "notes": "Balancing equations feels more intuitive. I am reviewing organic reaction patterns and lab reports.",
+      "resources": []
+    },
+    {
+      "id": "physics",
+      "subject": "Physics",
+      "progress": 70,
+      "notes": "Today I walked through kinematics and momentum. I am curious about applying these ideas to real world motion.",
+      "resources": []
+    },
+    {
+      "id": "mathematics",
+      "subject": "Mathematics",
+      "progress": 78,
+      "notes": "Algebra and calculus are blending into a clearer picture. I want to practice problem sets in linear algebra next.",
+      "resources": []
+    },
+    {
+      "id": "information",
+      "subject": "Information",
+      "progress": 68,
+      "notes": "Concepts of data flow, networks, and information theory are getting stronger. I am building a personal glossary of key terms.",
+      "resources": []
+    },
+    {
+      "id": "programming",
+      "subject": "Programming",
+      "progress": 82,
+      "notes": "FastAPI is powering this journal. I am exploring new automation patterns and building a friendly admin API.",
+      "resources": []
+    },
+    {
+      "id": "others",
+      "subject": "Others",
+      "progress": 55,
+      "notes": "I reserve this space for new interests, creative experiments, and soft skill growth. Learning is never just one subject.",
+      "resources": []
+    }
+  ]
+}

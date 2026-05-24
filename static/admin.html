@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>J's Journal | Admin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">J's Journal</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="study.html">Study Progress</a>
+          <a href="admin.html" class="active">Admin</a>
+        </nav>
+      </header>
+
+      <main class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Secure Admin</span>
+          <h1>Admin Panel</h1>
+          <p class="section-copy">Log in with your admin token to create posts, upload images/files, and manage study items.</p>
+
+          <div id="auth-box" class="card">
+            <label for="token-input">Admin Token</label>
+            <input id="token-input" placeholder="Enter admin token" style="width:100%; padding:10px; margin-top:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--text);" />
+            <div style="margin-top:12px; display:flex; gap:8px;">
+              <button id="login-btn" class="button">Log in</button>
+              <button id="logout-btn" class="button secondary">Log out</button>
+              <button id="token-check" class="button secondary">Check Token</button>
+            </div>
+            <p id="auth-msg" style="margin-top:12px; color:var(--text-muted);"></p>
+          </div>
+
+          <div id="admin-actions" class="admin-actions" style="margin-top:20px;" aria-hidden="true">
+            <section class="card">
+              <h3>Create Post</h3>
+              <input id="post-title" placeholder="Title" style="width:100%; padding:8px; margin-top:8px;" />
+              <label for="post-category">Category/Subject</label>
+              <select id="post-category" style="width:100%; padding:8px; margin-top:8px;">
+                <option value="Daily Life">Daily Life/General</option>
+                <option value="English">English</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Information">Information</option>
+                <option value="Programming">Programming</option>
+                <option value="Others">Others</option>
+              </select>
+              <div style="margin-top:12px;">
+                <strong>Attached Images</strong>
+                <ul id="post-images-list" class="resource-list"></ul>
+              </div>
+              <div style="margin-top:12px;">
+                <strong>Attached Files</strong>
+                <ul id="post-files-list" class="attachment-list"></ul>
+              </div>
+              <textarea id="post-body" placeholder="Write your thought..." rows="6" style="width:100%; padding:8px; margin-top:8px;"></textarea>
+              <div style="display:flex; gap:8px; margin-top:8px;">
+                <button id="create-post" class="button">Create Post</button>
+              </div>
+              <p id="post-msg" style="color:var(--text-muted);"></p>
+            </section>
+
+            <section class="card" style="margin-top:18px;">
+              <h3>Upload Image</h3>
+              <input id="image-file" type="file" accept="image/*" />
+              <div style="display:flex; gap:8px; margin-top:8px;">
+                <button id="upload-image" class="button">Upload Image</button>
+              </div>
+              <p id="image-msg" style="color:var(--text-muted);"></p>
+            </section>
+
+            <section class="card" style="margin-top:18px;">
+              <h3>Upload File</h3>
+              <input id="attach-file" type="file" />
+              <input id="attach-label" placeholder="Label (optional)" style="width:100%; padding:8px; margin-top:8px;" />
+              <div style="display:flex; gap:8px; margin-top:8px;">
+                <button id="upload-file" class="button">Upload File</button>
+              </div>
+              <p id="file-msg" style="color:var(--text-muted);"></p>
+            </section>
+
+            <section id="manage-posts" class="card" style="margin-top:18px;">
+              <h3>Manage Posts</h3>
+              <div style="display:flex; gap:8px; margin-bottom:8px;">
+                <button id="refresh-posts" class="button">Refresh Posts</button>
+              </div>
+              <ul id="manage-posts-list" class="manage-list"></ul>
+              <p id="manage-msg" style="color:var(--text-muted);"></p>
+            </section>
+
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer-bar">
+        <p>Admin actions are protected — only use on trusted devices.</p>
+      </footer>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
