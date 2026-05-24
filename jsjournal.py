@@ -232,6 +232,34 @@ def upload_file(
 @app.get("/api/admin/token-status")
 def token_status(token: str = Depends(get_admin_token)) -> JSONResponse:
     return JSONResponse({"message": "Admin token is valid"})
+@app.get("/")
+def read_root():
+    from fastapi.responses import FileResponse
+    return FileResponse(BASE_DIR / "index.html")
+
+@app.delete("/api/posts/{post_id}")
+def delete_post(post_id: str, admin_token: str = None):
+    if admin_token != "stargaze-2026":
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    
+    # Read current data safely from file
+    import json
+    try:
+        with open(DATA_FILE, "r") as f:
+            current_posts = json.load(f)
+    except Exception:
+        current_posts = []
+
+    initial_count = len(current_posts)
+    updated_posts = [p for p in current_posts if str(p.get("id")) != str(post_id)]
+    
+    if len(updated_posts) == initial_count:
+        raise HTTPException(status_code=404, detail="Post not found")
+        
+    with open(DATA_FILE, "w") as f:
+        json.dump(updated_posts, f, indent=4)
+        
+    return {"status": "success", "message": "Post deleted successfully"}
 if __name__ == "__main__":
     import uvicorn
 
